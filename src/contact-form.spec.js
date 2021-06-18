@@ -7,21 +7,16 @@ describe("ContactForm", () => {
 
   before(() => {
     pageObject = new ContactForm();
+    pageObject.typeInEmailField("example@example.com");
   });
 
   describe("#emailField", () => {
     it("should set value", () => {
-      pageObject.typeInEmailField("example@example.com");
-
       assert.strictEqual(pageObject.emailField, "example@example.com");
     });
 
     it("should be clear after form sending", () => {
-      // arrange
-      const pageObject = new ContactForm();
-
       // act
-      pageObject.typeInEmailField("example@example.com");
       pageObject.sendForm();
 
       // assert
