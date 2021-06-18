@@ -23,17 +23,8 @@ describe("ContactForm", () => {
       expect(pageObject.emailField).is.empty;
     });
   });
-});
 
-describe("ContactForm", () => {
-  let pageObject;
-
-  before(() => {
-    pageObject = new ContactForm();
-    pageObject.typeInEmailField("test@test.com");
-  });
-
-  describe("#SendForm", () => {
+  describe("#isSent", () => {
     it("the prop isSent should be true", () => {
       pageObject.sendForm();
 
