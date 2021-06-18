@@ -24,3 +24,20 @@ describe("ContactForm", () => {
     });
   });
 });
+
+describe("ContactForm", () => {
+  let pageObject;
+
+  before(() => {
+    pageObject = new ContactForm();
+    pageObject.typeInEmailField("test@test.com");
+  });
+
+  describe("#SendForm", () => {
+    it("the prop isSent should be true", () => {
+      pageObject.sendForm();
+
+      expect(pageObject.isSent).to.be.true;
+    });
+  });
+});
