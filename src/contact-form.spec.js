@@ -11,8 +11,11 @@ describe("ContactForm", () => {
   });
 
   describe("#emailField", () => {
-    it("should set value", () => {
-      assert.strictEqual(pageObject.emailField, "example@example.com");
+    ["example@example.com", "test@test.su"].forEach((email) => {
+      it(`should set value ${email}`, () => {
+        pageObject.typeInEmailField(email);
+        assert.strictEqual(pageObject.emailField, email);
+      });
     });
 
     it("should be clear after form sending", () => {
